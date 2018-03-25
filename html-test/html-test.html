@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html class="no-js lte-ie9 lte-ie8" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 9]><html class="no-js lte-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en" dir="ltr">
+<!--<![endif]-->
+<!-- Resources Used:
+    https://www.your-website.com/contact
+    https://https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/How_to_structure_an_HTML_form
+    https://www.w3.org/WAI/GL/WCAG20/tests/test168.html
+    https://stackoverflow.com/questions/16305960/activate-input-field-from-input-checkbox -->
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML Test</title>
+</head>
+
+<body>
+    <form id="new_test" action="#" method="post">
+        <div class="form-row">
+            <label for="test_full_name">
+                Your Name
+                <span class="c-red" aria-hidden="true">*</span>
+                <span class="is-hidden" data-validate="error" role="alert">Please enter your name</span>
+            </label>
+            <input data-validate="notempty" aria-required="true" type="text" name="full_name" id="test_full_name" placeholder="Your full name" />
+        </div>
+        <div class="form-row">
+            <label for="test_email">
+                Email<span class="c-red" aria-hidden="true">*</span>
+                <span class="is-hidden" data-validate="error" role="alert">Please enter a valid email address</span>
+            </label>
+            <input data-validate="email" aria-required="true" type="text" name="email" id="test_email" placeholder="name@example.com" />
+        </div>
+        <div class="form-row">
+            <label for="phone">Phone Number</label>
+            <input type="text" name="phone" id="phone">
+        </div>
+        <div class="form-row">
+            <label for="organization">Organization</label>
+            <input type="text" name="organization" id="organization">
+        </div>
+        <div class="form-row">
+            <label for="organization_type">Organization Type</label>
+            <select name="organization_type" id="organization_type">
+                <option value="">Select one</option>
+                <option value="governmental">Governmental</option>
+                <option value="educational">Educational</option>
+                <option value="ngo">NGO</option>
+                <option value="corporate">Corporate</option>
+            </select>
+        </div>
+        <fieldset>
+            <legend>How did you learn about us?
+                <br><small>Select all that apply.</small></legend>
+            <div class="form-row">
+                <input type="checkbox" id="search_engine" name="source" value="search_engine">
+                <label for="search_engine">Search Engine</label>
+            </div>
+            <div class="form-row">
+                <input type="checkbox" id="friend" name="source" value="friend">
+                <label for="friend">A friend or colleague</label>
+            </div>
+            <div class="form-row">
+                <input type="checkbox" id="social_media" name="source" value="social_media">
+                <label for="social_media">Social media</label>
+            </div>
+            <div class="form-row">
+                <input type="checkbox" id="other" name="source" value="other">
+                <label for="other">Other</label>
+                <input type="text" id="other_entry" name="source" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Select a free gift:</legend>
+            <div class="form-row">
+                <input type="radio" id="tote_bag" name="gift" value="tote_bag">
+                <label for="tote_bag">Tote Bag</label>
+            </div>
+            <div class="form-row">
+                <input type="radio" id="coffee_mug" name="gift" value="coffee_mug">
+                <label for="coffee_mug">Coffee Mug</label>
+            </div>
+            <div class="form-row">
+                <input type="radio" id="umbrella" name="gift" value="umbrella">
+                <label for="umbrella">Umbrella</label>
+            </div>
+        </fieldset>
+        <div class="form-row">
+            <label for="test_comments">
+                Comments
+            </label>
+            <textarea aria-required="true" rows="3" name="comments" id="test_comments"></textarea>
+        </div>
+        <div class="Form-footer">
+            <button class="form-submit button" type="submit" data-validate="submit" aria-label="Send message">Submit <span class="anim-hvr-slide-right-sm">&gt;</span></button>
+        </div>
+    </form>
+</body>
+
+</html>

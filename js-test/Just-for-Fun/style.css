@@ -1,0 +1,95 @@
+.navbar {
+    overflow: hidden;
+    background-color: #150080;
+    font-family: Arial, sans-serif;
+    width: 546px;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropbtn {
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    width: 273px;
+    text-align: center;
+    border: solid 1px #fff;
+    -webkit-transition: background-color .2s ease-out;
+    -moz-transition: background-color .2s ease-out;
+    -o-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+}
+
+.navbar a:hover,
+.navbar a:focus,
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #2d8956;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 267px;
+    margin: -4px 1px 1px;
+    border: solid 2px #000;
+    z-index: -1;
+}
+
+h3 {
+    padding: 0 16px 0;
+    margin-bottom: 0;
+}
+
+.dropdown-content a {
+    float: none;
+    padding: 10px 16px;
+    display: block;
+    text-align: left;
+    color: blue;
+    text-decoration: underline;
+}
+
+.dropdown-content a:last-of-type {
+    padding-bottom: 20px;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:focus {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.slide-up,
+.slide-down {
+    max-height: 0;
+    overflow-y: hidden;
+    -webkit-transition: max-height 0.2s ease-in-out;
+    -moz-transition: max-height 0.2s ease-in-out;
+    -o-transition: max-height 0.2s ease-in-out;
+    transition: max-height 0.2s ease-in-out;
+}
+
+.slide-down {
+    max-height: 13em;
+}

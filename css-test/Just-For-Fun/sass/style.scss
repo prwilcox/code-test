@@ -1,0 +1,193 @@
+/*
+Theme Name: CSS Test
+Author: Paul Wilcox
+
+--------------------------------------------------------------
+Refference Pages
+--------------------------------------------------------------
+
+breakpoints: https://sass-guidelin.es/#responsive-web-design-and-breakpoints
+bem: https://cssguidelin.es/#bem-like-naming
+card layout: https://codepen.io/ (used code from current project which originated from codepen)
+order: https://stackoverflow.com/questions/42884738/push-and-pul-in-css-without-bootstrap
+order: https://css-tricks.com/almanac/properties/o/order/
+float: https://stackoverflow.com/questions/36182635/making-a-flex-item-float-right
+shadow: http://jsfiddle.net/kiirosora/cz5de81k/1/
+
+
+
+--------------------------------------------------------------*/
+
+@import "variables";
+@import "mixins";
+
+
+
+
+/*--------------------------------------------------------------
+# Frontline CSS Reset
+--------------------------------------------------------------*/
+
+@import "frontline-css-reset";
+
+
+
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+body {
+    font-size: 16px;
+    line-height: 1.5em;
+    font-family: $font-stack__main;
+    color: $color__dark;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 1.3em;
+    margin-bottom: .5em;
+}
+
+a {
+    color: $color__medium;
+    font-size: .8em;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# Cards
+--------------------------------------------------------------*/
+
+.picture {
+    img {
+        display: block;
+        border: 0;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.cards__card {
+    background: $color__light;
+    margin-bottom: 2em;
+    border: 1px solid $color__medium;
+    position: relative;
+}
+
+.cards__card:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -6px;
+    left: 6px;
+    z-index: -1;
+    background: $color__highlight;
+    transform: skew(0deg, 1deg);
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# Layout 
+--------------------------------------------------------------*/
+
+.container {
+    width: 95%;
+    margin: 2em auto 0;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards__card {
+    @include respond-to('gargantuan') {
+        flex: 0 1 calc(33% - 1em);
+    }
+    @include respond-to('huge') {
+        flex: 0 1 calc(50% - .8em);
+    }
+    @include respond-to('medium') {
+        flex: 0 1 calc(100% - .8em);
+    }
+}
+
+.cards__card--container-all {
+
+    display: flex;
+    flex-flow: column;
+
+    @include respond-to('huge') {
+        display: block;
+    }
+    @include respond-to('large') {
+        display: flex;
+    }
+    @include respond-to('medium') {
+        display: block;
+    }
+    @include respond-to('small') {
+        display: flex;
+    }
+}
+
+.cards__card--container-1 {
+    order: 2;
+    padding: 1.4em 1.4em 0;
+}
+
+.cards__card--container-2 {
+    order: 1;
+    @include respond-to('huge') {
+        width: 30%;
+        float: right;
+        margin: 1.4em;
+    }
+    @include respond-to('large') {
+        width: 100%;
+        float: none;
+        margin: 0;
+        order: 1;
+    }
+    @include respond-to('medium') {
+        width: 35%;
+        float: right;
+        margin: 1.4em;
+        padding-bottom: 0;
+    }
+    @include respond-to('small') {
+        width: 100%;
+        float: none;
+        margin: 0;
+        order: 1;
+    }
+}
+
+.cards__card--container-3 {
+    order: 3;
+    padding: 0 1.4em 1.4em;
+}
+
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+.pull-right {
+    float: right;
+}
+
+.meta {
+    text-transform: uppercase;
+    font-size: .9em;
+    color: $color__medium-dark;
+}
